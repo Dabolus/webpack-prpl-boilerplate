@@ -1,0 +1,14 @@
+{
+  "entrypoint": "index.html",
+  "builds": [
+    {
+      "name": "es6",
+      "browserCapabilities": [
+        "es2015"
+      ]
+    },
+    {
+      "name": "es5"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "gts/tslint.json"
+  ],
+  "rules": {
+    "max-line-length": [
+      true,
+      100
+    ]
+  }
+}
