@@ -17,6 +17,7 @@
   },
   "include": [
     "typings/**/*.d.ts",
+    "webpack/**/*.ts",
     "src/**/*.ts",
     "test/**/*.ts"
   ]
