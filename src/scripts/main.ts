@@ -1,1 +1,1 @@
-console.log("Hello, World!");
+// This shall be the starting point for your code

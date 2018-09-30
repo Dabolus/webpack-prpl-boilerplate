@@ -1,2 +1,2 @@
-import "./scripts/main";
-import "./styles/main";
+import './scripts/main';
+import './styles/main';
