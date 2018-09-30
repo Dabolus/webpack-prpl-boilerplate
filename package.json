@@ -7,7 +7,7 @@
     "start": "ts-node ./node_modules/.bin/webpack-serve --config webpack/dev.config.ts",
     "build:static": "webpack --config webpack/prod.config.ts",
     "build": "npm run gulp build",
-    "serve": "prpl-server --config prpl-config.json --root build/ --host 0.0.0.0 --https-redirect --bot-proxy https://render-tron.appspot.com/render",
+    "serve": "prpl-server --root build/ --host 0.0.0.0 --https-redirect --bot-proxy https://render-tron.appspot.com/render",
     "lint": "tslint -p .",
     "format": "tslint -p . --fix"
   },
