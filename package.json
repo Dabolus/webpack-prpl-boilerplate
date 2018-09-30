@@ -12,8 +12,7 @@
     "format": "tslint -p . --fix"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "^7.0.0",
-    "prpl-server": "^1.2.0"
+    "@babel/runtime-corejs2": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
