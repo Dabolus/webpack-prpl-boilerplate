@@ -4,9 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<%= htmlWebpackPlugin.options.buildName ? `/${htmlWebpackPlugin.options.buildName}/` : '/' %>">
+    <title>My app</title>
+    <meta name="generator" content="Webpack PRPL boilerplate">
+    <meta name="description" content="My App description">
 
     <%- include fragments/critical-css -%>
     <%- include fragments/critical-js -%>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <h1>Congratulations!</h1>
+      <hr>
+      <p>Webpack PRPL boilerplate is ready to rock.</p>
+      <p>You can now start playing around with the code and build your awesome Progressive Web App!</p>
+      <p>Here's a random clock just to help you get started:</p>
+      <pre id="clock"></pre>
+    </main>
+  </body>
 </html>

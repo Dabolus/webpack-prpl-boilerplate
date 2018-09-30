@@ -1,0 +1,27 @@
+@import './theme';
+
+main {
+  color: $primary-text-color;
+  background: $card-background-color;
+  padding: 2rem;
+
+  @media (min-width: 720px) {
+    margin: 2rem auto;
+    max-width: 52rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.06rem 0.065rem 0 rgba(0, 0, 0, 0.14), 0 0.003rem 0.15rem 0 rgba(0, 0, 0, 0.12), 0 0.09rem 0.0035rem -0.065rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+hr {
+  width: calc(100% - 1rem);
+  border: 0;
+  padding: .05rem;
+  margin: .5rem;
+  background-color: $divider-color;
+}
+
+pre {
+  text-align: center;
+  font-size: 1.5rem;
+}
