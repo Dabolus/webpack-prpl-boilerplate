@@ -1,0 +1,12 @@
+{
+  "/": {
+    "scripts/app.js": {
+      "weight": 1,
+      "type": "script"
+    },
+    "styles/app.css": {
+      "weight": 1,
+      "type": "style"
+    }
+  }
+}
