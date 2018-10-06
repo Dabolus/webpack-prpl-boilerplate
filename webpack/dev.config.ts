@@ -1,19 +1,15 @@
 /* tslint:disable */
-// TODO: discover why we need these
-/// <reference types="../typings/webpack-merge" />
 
 import HtmlPlugin from 'html-webpack-plugin';
 import { smartStrategy as smartMerge } from 'webpack-merge';
 import baseConfig from './base.config';
-import devServerConfig from './dev-server.config';
 import webpack from 'webpack';
 
 const config: webpack.Configuration = smartMerge({
   plugins: 'prepend',
 })(baseConfig, {
   mode: 'development',
-  devtool: 'inline-source-map',
-  serve: devServerConfig,
+  devtool: 'eval-source-map',
   optimization: {
     removeAvailableModules: false,
     removeEmptyChunks: false,

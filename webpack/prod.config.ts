@@ -1,6 +1,5 @@
 /* tslint:disable */
 // TODO: discover why we need these
-/// <reference types="../typings/webpack-merge" />
 /// <reference types="../typings/terser" />
 /// <reference types="../typings/terser-webpack-plugin" />
 
@@ -43,9 +42,7 @@ const config: webpack.Configuration = smartMerge({
       {
         test: /styles\/.*\.s?[ac]ss$/,
         use: [
-          {
-            loader: miniCssExtractLoader,
-          },
+          miniCssExtractLoader,
           {
             loader: 'css-loader',
             options: {
