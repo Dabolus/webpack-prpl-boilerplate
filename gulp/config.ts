@@ -11,7 +11,7 @@ task('build:es6', (cb) =>
   exec('BUILD_NAME="es6" BROWSERSLIST="edge > 12" npm run build:static', cb));
 
 task('write-polymer-config', (cb) =>
-  writeFile(resolve(__dirname, '../build/polymer.json'), JSON.stringify({
+  writeFile(resolve(__dirname, '../build/polymer.json'), `${JSON.stringify({
     entrypoint: 'index.html',
     builds: [{
       name: 'es6',
@@ -21,6 +21,6 @@ task('write-polymer-config', (cb) =>
     }, {
       name: 'es5',
     }],
-  }, null, 2), cb));
+  }, null, 2)}\n`, cb));
 
 task('build', series(parallel('build:es5', 'build:es6'), 'write-polymer-config'));
