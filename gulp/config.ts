@@ -1,17 +1,17 @@
 /* tslint:disable:no-implicit-dependencies object-literal-sort-keys */
-import { exec } from 'child_process';
 import { writeFile } from 'fs';
 import { parallel, series, task } from 'gulp';
-import { resolve } from 'path';
+import { resolve as resolvePath } from 'path';
+import { build } from './helpers';
 
-task('build:es5', (cb) =>
-  exec('BUILD_NAME="es5" BROWSERSLIST="ie > 9" npm run build:static', cb));
+task('build:es5', () =>
+  build('es5', 'ie > 9'));
 
-task('build:es6', (cb) =>
-  exec('BUILD_NAME="es6" BROWSERSLIST="edge > 12" npm run build:static', cb));
+task('build:es6', () =>
+  build('es6', 'edge > 12'));
 
 task('write-polymer-config', (cb) =>
-  writeFile(resolve(__dirname, '../build/polymer.json'), `${JSON.stringify({
+  writeFile(resolvePath(__dirname, '../build/polymer.json'), `${JSON.stringify({
     entrypoint: 'index.html',
     builds: [{
       name: 'es6',
@@ -23,4 +23,7 @@ task('write-polymer-config', (cb) =>
     }],
   }, null, 2)}\n`, cb));
 
-task('build', series(parallel('build:es5', 'build:es6'), 'write-polymer-config'));
+task('build', series(
+  parallel('build:es5', 'build:es6'),
+  'write-polymer-config',
+));
