@@ -5,6 +5,7 @@ main {
   background: $card-background-color;
   padding: 2rem;
 
+  // stylelint-disable-next-line unit-whitelist
   @media (min-width: 720px) {
     margin: 2rem auto;
     max-width: 52rem;

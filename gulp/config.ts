@@ -1,9 +1,45 @@
 /* tslint:disable:no-implicit-dependencies object-literal-sort-keys */
+// TODO: discover why we need these
+/// <reference types="../typings/gulp-stylelint" />
+/// <reference types="../typings/gulp-htmllint" />
+
 import { writeFile } from 'fs';
-import { parallel, series, task } from 'gulp';
+import { parallel, series, src, task } from 'gulp';
+import htmllint from 'gulp-htmllint';
+import stylelint from 'gulp-stylelint';
+import tslint from 'gulp-tslint';
 import { resolve as resolvePath } from 'path';
 import { ConfigHelper } from './helpers';
 
+/* LINTING TASKS */
+task('lint:scripts', () =>
+  src('src/**/*.ts')
+    .pipe(tslint({
+      formatter: 'verbose',
+    }))
+    .pipe(tslint.report({
+      summarizeFailureOutput: true,
+    })));
+
+task('lint:styles', () =>
+  src('src/**/*.s[ac]ss')
+    .pipe(stylelint({
+      failAfterError: true,
+      reporters: [{
+        formatter: 'string',
+        console: true,
+      }],
+    })));
+
+task('lint:templates', () =>
+  src('src/**/*.ejs')
+    .pipe(htmllint({
+      failOnError: true,
+    })));
+
+task('lint', parallel('lint:scripts', 'lint:styles', 'lint:templates'));
+
+/* BUILDING TASKS */
 const configHelper = new ConfigHelper();
 
 task('build:es5', () =>
