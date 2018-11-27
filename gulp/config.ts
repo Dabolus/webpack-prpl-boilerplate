@@ -13,7 +13,7 @@ import { ConfigHelper } from './helpers';
 
 /* LINTING TASKS */
 task('lint:scripts', () =>
-  src('src/**/*.ts')
+  src(['typings/**/*.d.ts', 'src/**/*.ts'])
     .pipe(tslint({
       formatter: 'verbose',
     }))
