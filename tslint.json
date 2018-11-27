@@ -18,6 +18,7 @@
       ["String", "Use 'string' instead."],
       ["Number", "Use 'number' instead."],
       ["Boolean", "Use 'boolean' instead."]
-    ]
+    ],
+    "interface-name": [true, "never-prefix"]
   }
 }
