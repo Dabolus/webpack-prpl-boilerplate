@@ -1,19 +1,19 @@
 declare module 'gulp-stylelint' {
   export type GulpStylelintFormatter = 'string' | 'verbose' | 'json';
 
-  export interface IGulpStylelintReporter {
+  export interface GulpStylelintReporter {
     formatter: GulpStylelintFormatter;
     save?: string;
     console?: boolean;
   }
 
-  export interface IGulpStylelintOptions {
+  export interface GulpStylelintOptions {
     failAfterError?: boolean;
     reportOutputDir?: string;
-    reporters?: IGulpStylelintReporter[];
+    reporters?: GulpStylelintReporter[];
     debug?: boolean;
     fix?: boolean;
   }
 
-  export default function GulpStylelint(options?: IGulpStylelintOptions): any;
+  export default function GulpStylelint(options?: GulpStylelintOptions): any;
 }

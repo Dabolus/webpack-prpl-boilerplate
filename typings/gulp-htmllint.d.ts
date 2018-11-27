@@ -1,18 +1,18 @@
 declare module 'gulp-htmllint' {
-  export interface IGulpHtmllintOptions {
+  export interface GulpHtmllintOptions {
     rules?: any;
     config?: string;
     plugins?: string[];
     failOnError?: boolean;
   }
 
-  export interface IGulpHtmllintReporter {
+  export interface GulpHtmllintReporter {
     filepath: string;
     issues: string[];
   }
 
   export default function GulpHtmllint(
-    options?: IGulpHtmllintOptions,
-    customReporter?: IGulpHtmllintReporter,
+    options?: GulpHtmllintOptions,
+    customReporter?: GulpHtmllintReporter,
   ): any;
 }
