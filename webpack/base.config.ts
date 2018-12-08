@@ -35,7 +35,7 @@ const config: webpack.Configuration = {
     rules: [
       {
         test: /\.[tj]s$/,
-        exclude: /node_modules\/(?!(pwa-helpers)\/).*/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
