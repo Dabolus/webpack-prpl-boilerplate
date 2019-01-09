@@ -18,7 +18,7 @@ const config: webpack.Configuration = smartMerge({
   module: {
     rules: [
       {
-        test: /styles\/.*\.s?[ac]ss$/,
+        test: /styles[\\\/].*\.s?[ac]ss$/,
         use: [
           {
             loader: 'style-loader',
